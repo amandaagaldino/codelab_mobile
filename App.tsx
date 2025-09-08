@@ -1,5 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import quotesData from "./data/quotes.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -51,5 +52,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 16,
   },
 });
