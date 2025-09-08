@@ -20,8 +20,12 @@ export default function App() {
   );
   const [religious, setReligious] = useState(getRandomItem(religiousQuotes));
 
-  function handleMotivationalRefresh() {}
-  function handleReligiousRefresh() {}
+  function handleMotivationalRefresh() {
+    setMotivational(getRandomItem(motivationalQuotes));
+  }
+  function handleReligiousRefresh() {
+    setReligious(getRandomItem(religiousQuotes));
+  }
 
   return (
     <View style={styles.container}>
