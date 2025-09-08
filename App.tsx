@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import quotesData from "./data/quotes.json";
+import Header from "./components/Header";
 
 const motivationalQuotes = quotesData.quotes.filter(
   (q) => q.category !== "religious"
@@ -13,6 +13,8 @@ const religiousQuotes = quotesData.quotes.filter(
 export default function App() {
   return (
     <View style={styles.container}>
+      <Header />
+      <StatusBar style="auto" />
       <Text>Frases Motivacionais</Text>
       <FlatList
         data={motivationalQuotes}
