@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import quotesData from "./data/quotes.json";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const motivationalQuotes = quotesData.quotes.filter(
   (q) => q.category !== "religious"
@@ -11,22 +12,17 @@ const religiousQuotes = quotesData.quotes.filter(
 );
 
 export default function App() {
+  function handleMotivationalRefresh() {}
+  function handleReligiousRefresh() {}
+  
   return (
     <View style={styles.container}>
       <Header />
+      <Footer
+        onRefreshMotivational={handleMotivationalRefresh}
+        onRefreshReligious={handleReligiousRefresh}
+      />
       <StatusBar style="auto" />
-      <Text>Frases Motivacionais</Text>
-      <FlatList
-        data={motivationalQuotes}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <Text>{item.text}</Text>}
-      />
-      <Text>Frases Religiosas</Text>
-      <FlatList
-        data={religiousQuotes}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <Text>{item.text}</Text>}
-      />
     </View>
   );
 }
